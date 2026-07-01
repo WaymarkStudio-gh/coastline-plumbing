@@ -1,0 +1,131 @@
+/* =========================================================
+   Coastline Plumbing & Gas - styles.css
+   Mobile-first. Order: variables, reset, base, layout,
+   buttons, header, hero, services, about, cta, footer.
+   ========================================================= */
+
+/* 1. Brand variables */
+:root {
+  --navy: #0A2540;
+  --blue: #1C6DD0;
+  --blue-dark: #155AAE;
+  --orange: #F47A20;
+  --orange-dark: #DC6A14;
+  --bg: #F5F8FB;
+  --grey: #4A5568;
+  --line: #E2E8F0;
+  --white: #FFFFFF;
+  --maxw: 1100px;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(10,37,64,0.08);
+  --font-head: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* 2. Reset */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* 3. Base typography */
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; font-weight: 700; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+p { color: var(--grey); }
+
+/* 4. Layout helpers */
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+section { padding: 56px 0; }
+.section-title { color: var(--navy); text-align: center; }
+.section-intro { text-align: center; max-width: 540px; margin: 10px auto 36px; }
+
+/* 5. Buttons */
+.btn {
+  display: inline-block; font-family: var(--font-head); font-weight: 600;
+  font-size: 1rem; padding: 13px 22px; border-radius: 8px; cursor: pointer;
+  border: 2px solid transparent; text-align: center;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn-accent { background: var(--orange); color: var(--white); }
+.btn-accent:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.btn-primary { background: var(--blue); color: var(--white); }
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--navy); border-color: var(--line); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-outline-light { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.6); }
+.btn-outline-light:hover { background: rgba(255,255,255,0.12); }
+
+/* 6. Header / nav (mobile-first) */
+.site-header { position: sticky; top: 0; background: var(--white); border-bottom: 1px solid var(--line); z-index: 50; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: var(--font-head); font-weight: 700; color: var(--navy); font-size: 1.15rem; }
+.logo span { color: var(--blue); font-weight: 600; }
+.nav-toggle { width: 42px; height: 42px; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; justify-content: center; gap: 5px; }
+.nav-toggle span { height: 2px; background: var(--navy); border-radius: 2px; }
+.nav { position: fixed; inset: 64px 0 auto 0; background: var(--white); display: none; flex-direction: column; gap: 4px; padding: 12px 20px 20px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+.nav.open { display: flex; }
+.nav a { font-family: var(--font-head); font-weight: 600; color: var(--navy); padding: 10px 0; }
+.nav a:hover { color: var(--blue); }
+.nav .nav-cta { margin-top: 6px; }
+
+/* 7. Hero */
+.hero { background: linear-gradient(160deg, #0A2540, #155AAE); color: var(--white); }
+.hero-inner { padding: 64px 0; }
+.hero .eyebrow { color: #9DC2EE; font-family: var(--font-head); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: .8rem; }
+.hero h1 { color: var(--white); margin: 10px 0 14px; }
+.hero .lead { color: #D7E4F2; font-size: 1.08rem; max-width: 560px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+/* 8. Services */
+.services { background: var(--bg); }
+.service-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+.service-card { background: var(--white); border: 1px solid var(--line); border-top: 4px solid var(--blue); border-radius: var(--radius); padding: 24px; transition: transform .15s ease, box-shadow .15s ease; }
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.service-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 8px; }
+
+/* 9. About preview */
+.about-inner { display: grid; grid-template-columns: 1fr; gap: 28px; }
+.about-text .btn { margin-top: 18px; }
+.about-points li { position: relative; padding: 12px 0 12px 30px; border-bottom: 1px solid var(--line); color: var(--navy); }
+.about-points li::before { content: "\2713"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+
+/* 10. CTA */
+.cta { background: var(--navy); color: var(--white); text-align: center; }
+.cta h2 { color: var(--white); }
+.cta p { color: #D7E4F2; margin: 10px 0 22px; }
+.cta .hero-actions { justify-content: center; }
+
+/* 11. Footer */
+.site-footer { background: #071A2E; color: #C7D3E0; padding-top: 44px; }
+.footer-inner { display: grid; grid-template-columns: 1fr; gap: 22px; padding-bottom: 28px; }
+.footer-logo { font-family: var(--font-head); font-weight: 700; color: var(--white); font-size: 1.1rem; margin-bottom: 8px; }
+.site-footer a:hover { color: var(--white); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 18px; padding-bottom: 18px; font-size: .85rem; color: #8AA0B6; }
+
+/* 12. Scroll reveal (JavaScript adds .is-visible in Step 6) */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* 13. Larger screens */
+@media (min-width: 700px) {
+  h1 { font-size: 2.6rem; }
+  h2 { font-size: 2rem; }
+  .service-grid { grid-template-columns: 1fr 1fr; }
+  .about-inner { grid-template-columns: 1.2fr 1fr; align-items: center; }
+  .footer-inner { grid-template-columns: 1.4fr 1fr; }
+}
+@media (min-width: 980px) {
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+  .nav-toggle { display: none; }
+  .nav { position: static; display: flex; flex-direction: row; align-items: center; gap: 22px; padding: 0; border: none; box-shadow: none; background: transparent; }
+  .nav .nav-cta { margin-top: 0; }
+}
