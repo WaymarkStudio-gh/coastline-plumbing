@@ -55,16 +55,16 @@ if (typeof gsap !== "undefined") {
     ease: "power2.out"
   });
 
-  // 2. Service cards: each one rises as you scroll to it
-  gsap.utils.toArray(".service-card").forEach((card) => {
-    gsap.from(card, {
+  // 2. Service list items: each one rises as you scroll to it
+  gsap.utils.toArray(".service-item").forEach((item) => {
+    gsap.from(item, {
       scrollTrigger: {
-        trigger: card,     // watch this card
-        start: "top 85%"   // fire when its top reaches 85% down the screen
+        trigger: item,      // watch this item
+        start: "top 85%"    // fire when its top reaches 85% down the screen
       },
-      y: 30,
+      y: 20,
       opacity: 0,
-      duration: 0.6,
+      duration: 0.5,
       ease: "power2.out"
     });
   });
