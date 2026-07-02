@@ -129,3 +129,28 @@ section { padding: 56px 0; }
   .nav { position: static; display: flex; flex-direction: row; align-items: center; gap: 22px; padding: 0; border: none; box-shadow: none; background: transparent; }
   .nav .nav-cta { margin-top: 0; }
 }
+/* Step 7 polish - add to the end of styles.css */
+
+/* Smooth scrolling for on-page links */
+html { scroll-behavior: smooth; }
+
+/* Clear keyboard focus outlines (accessibility) */
+a:focus-visible,
+.btn:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* Stagger the service cards as they reveal */
+.service-card:nth-child(2) { transition-delay: .08s; }
+.service-card:nth-child(3) { transition-delay: .16s; }
+.service-card:nth-child(4) { transition-delay: .24s; }
+.service-card:nth-child(5) { transition-delay: .32s; }
+.service-card:nth-child(6) { transition-delay: .40s; }
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
