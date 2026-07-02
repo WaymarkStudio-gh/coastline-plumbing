@@ -39,3 +39,31 @@ if ("IntersectionObserver" in window) {
 /* 3. Auto-update the footer year */
 const yearEl = document.querySelector("#year");
 if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+/* --- GSAP animations (needs the GSAP + ScrollTrigger scripts in index.html) --- */
+
+// Turn on the ScrollTrigger add-on
+gsap.registerPlugin(ScrollTrigger);
+
+// 1. Hero: heading, text and buttons rise and fade in on page load
+gsap.from(".hero-inner > *", {
+  y: 24,          // start 24px lower
+  opacity: 0,     // start invisible
+  duration: 0.7,  // take 0.7 seconds
+  stagger: 0.12,  // 0.12s gap between each element
+  ease: "power2.out"
+});
+
+// 2. Service cards: each one rises as you scroll to it
+gsap.utils.toArray(".service-card").forEach((card) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,     // watch this card
+      start: "top 85%"   // fire when its top reaches 85% down the screen
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out"
+  });
+});
