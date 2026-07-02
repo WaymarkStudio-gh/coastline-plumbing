@@ -170,3 +170,13 @@ a:focus-visible,
 
 .flow-line path { stroke-dasharray: 600; stroke-dashoffset: 600; animation: draw 2s ease forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* 14. About & Contact pages */
+.team { background: var(--bg); }
+.team-role { color: var(--blue); font-family: var(--font-head); font-weight: 600; font-size: .85rem; margin-bottom: 10px; }
+.areas { background: var(--bg); }
+.areas-list { display: grid; grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+.contact-info { background: var(--bg); }
+@media (min-width: 700px) {
+  .areas-list { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+}
