@@ -154,3 +154,16 @@ a:focus-visible,
   * { transition: none !important; animation: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
+
+/* Contact form */
+.form-section { padding: 56px 0; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 520px; margin-top: 24px; }
+.contact-form label { display: flex; flex-direction: column; gap: 6px; font-family: var(--font-head); font-weight: 600; color: var(--navy); }
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body); font-size: 1rem; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--white); color: var(--navy);
+}
+.contact-form input:focus,
+.contact-form textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(28,109,208,0.15); }
+.contact-form button { align-self: flex-start; }
