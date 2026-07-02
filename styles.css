@@ -153,6 +153,7 @@ a:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
+  .flow-line path { stroke-dashoffset: 0 !important; }
 }
 
 /* Contact form */
@@ -168,7 +169,17 @@ a:focus-visible,
 .contact-form textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(28,109,208,0.15); }
 .contact-form button { align-self: flex-start; }
 
-.flow-line path { stroke-dasharray: 600; stroke-dashoffset: 600; animation: draw 2s ease forwards; }
+/* Flow line divider - draws in like water through a pipe, triggered on scroll */
+.flow-divider { display: flex; justify-content: center; padding: 8px 0; }
+.flow-line path {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+.flow-line.is-visible path { animation: draw 1.8s ease forwards; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* 14. About & Contact pages */

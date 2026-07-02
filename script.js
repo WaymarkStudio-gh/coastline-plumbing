@@ -18,8 +18,8 @@ if (toggle && nav) {
   });
 }
 
-/* 2. Fade sections in as they scroll into view */
-const reveals = document.querySelectorAll(".reveal");
+/* 2. Fade sections in as they scroll into view (also draws the flow line) */
+const reveals = document.querySelectorAll(".reveal, .flow-line");
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver((entries) => {
